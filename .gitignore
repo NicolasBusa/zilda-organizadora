@@ -1,0 +1,7 @@
+/build/
+/outputs/
+/tests/
+*.novo
+*.log
+.vs/
+*.user

@@ -1,0 +1,86 @@
+ZILDA ORGANIZADORA 1.0.0
+
+INSTALAR
+Execute Zilda-Organizadora-Instalar.exe. O instalador instala somente para
+seu usuário, cria atalhos no menu Iniciar e aparece em Configurações > Apps.
+Não exige administrador. Requer Windows 10/11 x64 e .NET Framework 4.8.
+Este componente já está presente neste computador. O instalador verifica
+sua disponibilidade antes de instalar; não faz downloads.
+
+PRIMEIROS PASSOS
+1. Crie ou escolha um grupo no gerenciador.
+2. Adicione arquivos, pastas ou links. Também pode importar atalhos do desktop.
+3. Na área de trabalho, passe o mouse no grupo para abrir; clique num atalho.
+4. Arraste o grupo para posicioná-lo. O botão direito mostra mais opções.
+5. Escolha Grade, Coluna, Linha, Leque ou Anel para cada grupo.
+
+O X fecha o gerenciador e mantém os grupos ativos. Dê dois cliques no ícone
+da Zilda perto do relógio para voltar. Pode estar oculto no menu ^.
+Para encerrar completamente: botão direito nesse ícone > Sair da Zilda.
+Ctrl+Alt+Z abre o gerenciador se o atalho global estiver disponível.
+
+SEUS ARQUIVOS
+.lnk e .url são copiados para a pasta privada da Zilda. Aplicativos,
+documentos e pastas são referenciados no local original. Se um documento
+for movido, adicione-o novamente. Nada é sincronizado com a nuvem.
+
+Por padrão, os originais ficam no desktop. Para limpar a área de trabalho,
+ative "Arquivar atalhos arrastados da área de trabalho" nas Configurações.
+Aplica-se somente a .lnk/.url arrastados da sua área de trabalho pessoal,
+nunca a documentos ou ao desktop público. Ao remover uma entrada/grupo/perfil
+ou desinstalar, os originais arquivados voltam. Nomes iguais recebem sufixo;
+arquivos existentes não são sobrescritos.
+
+Arrastar de um painel para o Explorer ou desktop faz uma CÓPIA. Para retirar
+a entrada do grupo e devolver o original, use o menu "Devolver à área de
+trabalho". Dentro do painel, arrastar reordena; no gerenciador use as setas.
+
+PERFIS, BACKUP E PERSONALIZAÇÃO
+Perfis > crie, duplique, renomeie ou ative configurações independentes.
+Configurações > abertura por Hover ou Clique, tempos, animação, tema dos
+painéis, opacidade, tamanho de ícones e paginação. O gerenciador usa tema escuro.
+Configurações > Exportar backup / Restaurar backup. O ZIP inclui perfis,
+cópias de atalhos, ícones importados e originais arquivados. Não inclui os
+aplicativos e documentos de destino. Ao mudar de PC, os destinos podem precisar
+ser adicionados novamente. Antes de importar, a Zilda salva um backup preventivo
+e devolve os originais arquivados da configuração anterior.
+
+Dados: %APPDATA%\ZildaOrganizadora
+Instalação: %LOCALAPPDATA%\Programs\ZildaOrganizadora
+Logs e recuperação de configuração corrompida ficam na pasta de dados.
+Não há contas, telemetria, assinatura mensal nem atualizações automáticas.
+
+DESINSTALAR
+Configurações do Windows > Apps > Zilda Organizadora > Desinstalar.
+Ou execute DesinstalarZilda.exe na pasta instalada.
+Os originais arquivados são restaurados primeiro. Por padrão, os perfis são
+preservados para reinstalação; marque a opção de apagar dados se desejar.
+O desinstalador remove apenas seus próprios arquivos. Um pequeno auxiliar
+temporário pode permanecer em %TEMP% e ser removido pela limpeza do Windows.
+
+ESCOPO DESTA VERSÃO
+Implementação independente inspirada nas funções públicas do DeskRipple.
+Não usa código, imagens, licença ou serviços proprietários do original.
+A grade é própria (96 px) e não desloca ícones nativos do Windows; ajuste
+os grupos para células livres. Tamanho dos ícones configurável, sem acompanhar
+automaticamente o Ctrl+scroll do desktop. Grupos longos usam páginas.
+As janelas tentam se anexar ao desktop do Explorer; quando o Windows impede
+esse acesso, usam modo alternativo de ordem de janelas. Há recuperação
+periódica após reinício do Explorer e ajuste ao mudar a configuração de telas.
+Testado no Windows deste computador; outras versões, DPI misto e softwares
+que substituem o Explorer precisam de validação no ambiente de uso.
+
+O executável não possui assinatura digital de publicador. O Windows pode
+pedir confirmação de procedência na primeira execução.
+
+LINHA DE COMANDO
+ZildaOrganizadora.exe --tray
+ZildaOrganizadora.exe --profile "Nome do perfil"
+ZildaOrganizadora.exe --quit
+ZildaOrganizadora.exe --restore-archives --quit
+
+DESENVOLVIMENTO
+O pacote de fontes inclui build.ps1 e package.ps1. Compila com o compilador
+do .NET Framework presente no Windows; não precisa de npm nem bibliotecas
+externas. O modo --self-test --data-dir "pasta exclusiva" testa persistência,
+atalhos, backups, validação de entrada e layouts usando desktop simulado.
